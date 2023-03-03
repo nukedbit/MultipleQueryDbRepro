@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "ui:dev": "npx tailwindcss -c tailwind.config.js -i ./tailwind.input.css -o ./wwwroot/css/app.css --watch",
+    "ui:build": "npx tailwindcss -c tailwind.config.js -i ./tailwind.input.css -o ./wwwroot/css/app.css --minify",
+    "postinstall": "cd ../MultipleQueryDbRepro && dotnet run --AppTasks=migrate",
+    "migrate": "cd ../MultipleQueryDbRepro && dotnet run MultipleQueryDbRepro.csproj --AppTasks=migrate",
+    "revert:last": "cd ../MultipleQueryDbRepro && dotnet run --AppTasks=migrate.revert:last",
+    "revert:all": "cd ../MultipleQueryDbRepro && dotnet run --AppTasks=migrate.revert:all"
+  }
+}
